@@ -41,7 +41,7 @@ spec:
       files:
         kibana.yml:
           ## Default Kibana configuration from kibana-docker.
-          elasticsearch.url: http://elasticsearch-kubeaddons-client:9200
+          elasticsearch.url: http://elasticsearch-ext-kubeaddons-client:9200
           ## Ref: https://www.elastic.co/guide/en/kibana/current/settings.html
           server.basePath: /ops/portal/kibana/enterprise
       serviceAccount:
