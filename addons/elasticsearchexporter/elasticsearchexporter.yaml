@@ -2,7 +2,7 @@ apiVersion: kubeaddons.mesosphere.io/v1beta1
 kind: Addon
 metadata:
   name: elasticsearchexporter-ext
-  namespace: kubeaddons-enterprise
+  namespace: kubeaddons
   labels:
     kubeaddons.mesosphere.io/name: elasticsearchexporter-ext
   annotations:
@@ -40,9 +40,9 @@ spec:
       fullnameOverride: elasticsearchexporter-ext-kubeaddons-elasticsearch-exporter
       nameOverride: elasticsearch-ext-exporter
       es:
-        uri: http://elasticsearch-ext-kubeaddons-client:9200
+        uri: http://elasticsearch-ext-kubeaddons-client.kubeaddons-enterprise.svc.cluster.local:9200
       service:
         labels:
-          servicemonitor.kubeaddons.mesosphere.io/path: "metrics-ext"
+          servicemonitor.kubeaddons.mesosphere.io/path: "metrics"
         metricsPort:
-          name: metrics-ext
+          name: metrics
